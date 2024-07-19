@@ -1,0 +1,11 @@
+#!/bin/python3
+
+import sys
+sys.path.append("../")
+
+from lib.camera_interface import MainInterface
+
+
+if __name__ == "__main__":
+    MainInterface(camera_index=2)
+
