@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import time
+import sys
+sys.path.append('../')
+
+from lib.cnn_classifier import MobileNetClassifier
+
+def main():
+    classifier = MobileNetClassifier(color_mode='rgb', models_dir='../models')
+    classifier.train('../data/all')
+    classifier.load_model('../models/mobilenet_best.keras')
+    start = time.time()
+    prediction = classifier.predict('../data/all/a/20240719_160316.jpg')
+    end = time.time()
+    print(prediction, end - start)
+
+if __name__ == "__main__":
+    main()

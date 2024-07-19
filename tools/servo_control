@@ -1,0 +1,16 @@
+#!/bin/python3
+import sys
+
+sys.path.append("../")
+from lib.servo_interface import SerialInterface
+
+
+def main():
+    si = SerialInterface()
+    angles = [135, 45]
+    for _ in range(10):
+        si.run_sequence(angles)
+
+
+if __name__ == "__main__":
+    main()

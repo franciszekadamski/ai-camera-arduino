@@ -1,0 +1,17 @@
+#!/bin/python3
+
+import sys
+sys.path.append("../")
+
+from lib.camera_interface import MainInterface
+
+
+def main():
+    camera = MainInterface(
+        data_dir="../data/src/",
+        camera_index=2
+    )
+
+
+if __name__ == "__main__":
+    main()
